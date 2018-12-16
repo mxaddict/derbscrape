@@ -17,8 +17,6 @@ module.exports = function (db) {
     let limit = 250
     let status = 4
 
-    process.stdout.write('+')
-
     // Mark as processing
     db.query('UPDATE shops SET status = 3 WHERE id = ' + shop.id)
 
