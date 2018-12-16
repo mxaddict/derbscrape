@@ -6,31 +6,29 @@ const argv = require('yargs')
   })
   .argv
 
-const mysql = require('mysql');
-const log = console.log
+const mysql = require('promise-mysql');
 
 const shops = require('./src/shops')
 const products = require('./src/products')
 
-const db = mysql.createConnection({
+// Check for the task
+let task = argv.task
+
+mysql.createConnection({
   host     : 'localhost',
   user     : 'root',
   password : '',
   database : 'derbscrape'
-});
+}).then(db => {
+  switch (task) {
+    case 'shops':
+      shops(db)
+      break;
+    case 'products':
+      products(db)
+      break;
+    default:
+      log('Task not implemented')
+  }
+})
 
-db.connect()
-
-// Check for the task
-let task = argv.task
-
-switch (task) {
-  case 'shops':
-    shops(db, log)
-    break;
-  case 'products':
-    products(db, log)
-    break;
-  default:
-    log('Task not implemented')
-}
