@@ -1,0 +1,19 @@
+{
+  "name": "derbscrape",
+  "version": "1.0.0",
+  "description": "Scrapes Derbs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:mxaddict/derbscrape.git"
+  },
+  "keywords": [
+    "derb",
+    "scrape"
+  ],
+  "author": "Barry Deeney <mxaddict@codedmaster.com>",
+  "license": "MIT"
+}
