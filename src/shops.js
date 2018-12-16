@@ -1,7 +1,11 @@
 module.exports = function (db, log) {
-  db.query('SELECT COUNT(*) AS count FROM shops WHERE status != 4', (error, results, fields) => {
+  let limit = 1
+  db.query('SELECT * FROM shops WHERE status != 2 LIMIT ' + limit, (error, results, fields) => {
     if (error) throw error
-    log(results)
+    for (let i = 0, len = results.length; i < len; i++) {
+      let shop = results[i]
+      log(shop)
+    }
   })
   db.end()
 }
