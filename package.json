@@ -4,6 +4,7 @@
   "description": "Scrapes Derbs",
   "main": "index.js",
   "scripts": {
+    "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -15,5 +16,8 @@
     "scrape"
   ],
   "author": "Barry Deeney <mxaddict@codedmaster.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "yargs": "^12.0.5"
+  }
 }
