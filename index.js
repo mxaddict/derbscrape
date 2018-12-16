@@ -31,4 +31,3 @@ mysql.createConnection({
       log('Task not implemented')
   }
 })
-
