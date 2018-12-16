@@ -168,4 +168,8 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
+# SQL files?
+*.sql
+*.db
+
 # End of https://www.gitignore.io/api/vim,node,macos,linux,windows
