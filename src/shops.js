@@ -34,7 +34,7 @@ module.exports = function (db) {
 
       for (let i = 0, len = results.length; i < len; i++) {
         let shop = results[i]
-        let req = axios.get(shop.name).then(res => {
+        let req = axios.head(shop.name).then(res => {
             process.stdout.write('+')
             db.query('UPDATE shops SET status = 2 WHERE id = ' + shop.id)
         }).catch(err => {
