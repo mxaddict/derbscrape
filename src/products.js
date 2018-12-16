@@ -40,6 +40,7 @@ module.exports = function (db) {
 
                 db.query(
                   "INSERT INTO products SET " +
+                  "shopify_pid = " + db.escape(product.id) + ", " +
                   "shop_id = " + db.escape(shop.id) + ", " +
                   "title = " + db.escape(product.title) + ", " +
                   "product_type = " + db.escape(product.product_type) + ", " +
