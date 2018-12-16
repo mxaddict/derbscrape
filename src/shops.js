@@ -24,7 +24,7 @@ module.exports = function (db) {
   let promises = []
 
   function loadBatch() {
-    db.query('SELECT * FROM shops WHERE status = 1 LIMIT ' + batch, (error, results, fields) => {
+    db.query('SELECT * FROM shops WHERE status = 1 ORDER BY RAND() LIMIT ' + batch, (error, results, fields) => {
       if (error) throw error
 
       if (results.length == 0) {
