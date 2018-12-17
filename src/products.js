@@ -95,7 +95,7 @@ module.exports = function (db) {
   }
 
   function loadBatch() {
-    db.query('SELECT * FROM shops WHERE status = 2 ORDER BY RAND() LIMIT 1', async (error, results, fields) => {
+    db.query('SELECT * FROM shops WHERE status = 2 LIMIT 1', async (error, results, fields) => {
       if (error) throw error
 
       if (results.length == 0) {
