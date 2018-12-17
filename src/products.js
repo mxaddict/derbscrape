@@ -48,6 +48,7 @@ module.exports = function (db) {
                   "tags = " + db.escape(JSON.stringify(product.tags)) + ", " +
                   "image = " + db.escape((image ? image.src : '')) + ", " +
                   "price = " + db.escape(variant.price) + ", " +
+                  "raw_data = " + db.escape(JSON.stringify(product)) + ", " +
                   "created_at = NOW(), " +
                   "updated_at = NOW()"
                 )
